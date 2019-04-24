@@ -3,6 +3,7 @@
 ### EasySentinel
 
 ---
+![](https://img.shields.io/badge/build-passing-brightgreen.svg) ![](https://img.shields.io/badge/license-Apache%202-blue.svg)
 
 是一款专门为`SpringBoot`项目设计的限流组件，利用`Redis`+`lua`从而来实现高性能和分布式的能力。使用比较简单。通过半嵌入式的开发即可使用分布式注解。引用使用`Redis`作为注册中心,所以需要添加redis依赖
 
