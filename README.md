@@ -25,7 +25,7 @@ SpringBoot2版本之后官方强烈建议以此来替换`spring-boot-starter-red
 
 ![](https://ws3.sinaimg.cn/large/006tNc79gy1g2e0wi3bpuj31320ihmz8.jpg)
 
-###使用案例
+### 使用案例
 
 只用将需要限制的接口加上`@EasySentinel`即可实现限流能力
 
