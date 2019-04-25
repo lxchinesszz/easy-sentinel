@@ -87,6 +87,12 @@ public class DefaultLimiterBlockHandler {
 ```
 
 
+### 压力测试
+
+`ab -n 14 -c 1  http://127.0.0.1:8889/user/lxchinesszz`
+
+
+![](https://ws2.sinaimg.cn/large/006tNc79gy1g2evzcxz9rj311b0hy4qp.jpg)
 
 
 
