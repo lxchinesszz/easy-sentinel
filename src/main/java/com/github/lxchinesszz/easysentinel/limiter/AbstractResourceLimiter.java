@@ -4,11 +4,8 @@ import com.github.lxchinesszz.easysentinel.annotation.EasySentinel;
 import com.github.lxchinesszz.easysentinel.namespace.NameSpaceHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.script.RedisScript;
-import org.springframework.data.redis.serializer.StringRedisSerializer;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -51,7 +48,7 @@ public abstract class AbstractResourceLimiter implements Limiter, RequestCounter
         if (currentCount == 0) {
             log.error("Current resource access exceeds maximum limit");
         } else {
-            log.error("Current resource access QPS =" + currentCount);
+            log.debug("Current resource access QPS =" + currentCount);
         }
         return currentCount == 0;
     }

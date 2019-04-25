@@ -75,21 +75,21 @@ public class RedisRegistryCenter extends AbstractRegistryCenter {
 
     /**
      * 根据id和cover来判断是否移除远程配置
+     * 从注册中心拉下来,如果cover=true就替换
      *
      * @param resourceMetaInfo     当前服务所有资源信息(多)
      * @param easySentinelInstance 当前限流资源信息(单)
      */
     private void mergeResource(ResourceMetaInfo resourceMetaInfo, EasySentinelInstance easySentinelInstance) {
         List<EasySentinelInstance> easySentinelInstances = resourceMetaInfo.getEasySentinelInstances();
-        boolean cover = false;
         for (Iterator<EasySentinelInstance> iterator = easySentinelInstances.iterator(); iterator.hasNext(); ) {
             EasySentinelInstance next = iterator.next();
             if ((easySentinelInstance.getId().equalsIgnoreCase(next.getId()) && easySentinelInstance.isCover())) {
                 iterator.remove();
-                cover = true;
+                easySentinelInstances.add(easySentinelInstance);
             }
         }
-        if (cover | easySentinelInstances.isEmpty()) {
+        if (easySentinelInstances.isEmpty()) {
             easySentinelInstances.add(easySentinelInstance);
         }
     }
