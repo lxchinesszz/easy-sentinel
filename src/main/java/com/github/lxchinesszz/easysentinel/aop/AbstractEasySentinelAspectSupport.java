@@ -83,8 +83,8 @@ public class AbstractEasySentinelAspectSupport {
     /**
      * 调用本实例中的方法
      *
-     * @param pjp
-     * @param fallbackName
+     * @param pjp 切入点
+     * @param fallbackName 备用方法名
      * @return
      */
     private Method extractFallbackMethod(ProceedingJoinPoint pjp, String fallbackName) {

@@ -80,7 +80,7 @@ public abstract class AbstractResourceLimiter implements Limiter, RequestCounter
     @Override
     public long count(String resourceName) {
         String resourceNameCountKey = nameSpaceHandler.resourceTotalCountKey(resourceName);
-        String requestCount = (String) redisTemplate.opsForValue().get(resourceNameCountKey);
+        String requestCount = redisTemplate.opsForValue().get(resourceNameCountKey);
         log.debug(resourceNameCountKey + " Request Count:" + requestCount);
         return Long.parseLong(requestCount);
     }
