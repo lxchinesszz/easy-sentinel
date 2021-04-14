@@ -1,4 +1,3 @@
-![easy](https://ws3.sinaimg.cn/large/006tNc79gy1g2e0ejmbv0j312s0bsmxv.jpg)
 
 ### EasySentinel
 
